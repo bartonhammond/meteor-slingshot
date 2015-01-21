@@ -1,0 +1,43 @@
+<head>
+  <title>slingshot</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  {{> loginButtons}}
+  {{#if currentUser}}
+    {{> slingshotForm}}
+  {{else}}
+    <p> Please login to upload image to AWS</p>
+  {{/if}}
+  <h1>Users Pictures</h1>
+  <ul>
+    {{> uploadedPictures}}
+   </ul>
+</body>
+
+<template name="myPicture">
+  <img src={{url}}/>
+</template>
+
+<template name="uploadedPictures">
+  {{#each pictures}}
+    <li>{{this.name}}: <img src="{{this.url}}" height=75 width=75></li>
+  {{/each}}
+  
+</template>
+
+<template name="slingshotForm">
+  <form>
+    <input type="file" id="fileToUpload" accept="image/*">
+    <input type="submit">
+  </form>
+</template>
+
+<template name="progressBar">
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+      <span class="sr-only">{{progress}}% Complete</span>
+    </div>
+  </div>
+</template>
