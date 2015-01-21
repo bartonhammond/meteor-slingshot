@@ -3,13 +3,13 @@ meteor-slingshot sample
 ## Steps
 
 1. Add packages
-        a. accounts-password
-        b. accounts-ui
-        c. edgee:slingshot
+    * accounts-password
+    * accounts-ui
+    * edgee:slingshot
 
 2. Create AWS S3 bucket
-        a. Update bucket Permissions for Everyone for List
-        b. Use Security Details and save KeyID and AccessKey.
+    * Update bucket Permissions for Everyone for List
+    * Use Security Details and save KeyID and AccessKey.
       
 3. Update config.json with KeyID and AccessKey
 
